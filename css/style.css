@@ -9,14 +9,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'General Sans';
     src: url('/fonts/GeneralSans-Extralight.woff2') format('woff2'),
         url('/fonts/GeneralSans-Extralight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: 'General Sans';
@@ -27,14 +27,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-display: swap;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'General Sans';
     src: url('/fonts/GeneralSans-Light.woff2') format('woff2'),
         url('/fonts/GeneralSans-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
-}
+} */
 
 @font-face {
     font-family: 'General Sans';
@@ -91,10 +91,11 @@ a{color: inherit; text-decoration: none;font-family: inherit;}
 :root{
     --primary-font: 'Gotcha';
     --secondary-font: 'General Sans';
-
+    --fontawesome : "Font Awesome 6 Free";
     --primary-color:#007173;
     --primary-color-shade-1:#009496;
     --secondary-color:#0F1828;
+    --secondary-color-shade-1: rgba(15, 24, 40, 0.75);
     
     --body-color:#383838;
     --white-shade: #F1EAE6;
@@ -105,6 +106,8 @@ body{
     position: relative;
     font-weight: var(--secondary-font);
     line-height: 100%;
+    font-weight: 400;
+    color: var(--body-color);
 }
 
 body.overlay::before{content: '';
@@ -115,6 +118,12 @@ background: url(/image/screenshot.png)top center no-repeat;
  inset: 0; 
  margin: auto;
 z-index: 3;
+}
+
+h1,h2,h3,h4{
+    font-family: var(--secondary-font);
+    color: var(--secondary-color);
+    font-weight: 400;
 }
 
 .wrapper{
@@ -138,7 +147,7 @@ z-index: 3;
 .navigation__menu li a{color: var(--secondary-color);font-size: 1rem;font-weight: 500;font-family: var(--secondary-font);}
 .navigation__menu li span{}
 .navigation__menu li span::before{ content: "\f078"; 
-    font-family: "Font Awesome 6 Free";}
+    font-family: var(--fontawesome);  font-weight: 900;}
 
 /* Header Info */
 .header__info{grid-column: 11 / span 121;display: flex;justify-content: space-between;align-items: center;padding-right: 15px;}
@@ -170,6 +179,38 @@ z-index: 3;
 .hero__banner{max-width: 604px; width: 100%;margin-right: 35px;aspect-ratio: 1/1;}
 .hero__banner figure{width: 100%;height: 100%;overflow: hidden;border-top-right-radius: 300px;border-top-left-radius: 300px;}
 .hero__banner figure img{max-width: initial;height: 100%;margin-left: 50%;transform: translateX(-50%);width: unset;}
+
+
+/* Main */
+#main
+.main__container{min-height: 550px; display: flex; justify-content: space-between;flex-direction: row-reverse;}
+main{max-width: 584px;width: 100%;margin-top: 119px;margin-right: 63px;}
+main h1{font-size: 3rem;line-height: 100%;color: var(--secondary-color);font-weight: normal;margin-bottom: 14px;}
+main h1 small{text-transform: uppercase;font-size: 1rem;display: block;line-height: 100%;color: var(--secondary-color-shade-1);}
+main h1 span{font-family: var(--primary-font);color: var(--primary-color);font-size: 3.8rem;line-height: 100%;}
+main p{line-height: 25px;}
+main a{margin-top: 27px;}
+
+.main__sideimg{align-self: end;max-width: 648px;width: 100%;}
+.main__sideimg figure{}
+.main__sideimg figure img{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Presents */
 .clearfix:after,
 .clearfix:before {
@@ -186,25 +227,15 @@ z-index: 3;
 .btn:hover{}
 
 .primary-btn{background: var(--primary-color);color: #fff;}
-.secondary-btn{color: var(--secondary-color);border: 1px solid #0F182880;}
+.secondary-btn{color: var(--secondary-color);border: 1px solid var(--secondary-color-shade-1);}
 
 
-#overlay {
-    position: fixed;
-    right: 0;
-    top: 50%;
-    background: red;
-    cursor: pointer;
-    writing-mode: vertical-lr;
-    padding: 10px;
-    border-radius: 10px;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-    color: #fff;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    transition: all 500ms;
-    z-index: 99;
-  }
+.btn-txt{display: block;max-width: max-content;width: 100%;padding-inline: 6px;font-weight: 600;font-size: 1rem;color: var(--primary-color);}
+.btn-txt::after{content: "\f062";font-family: var(--fontawesome);font-weight: 600;display: inline-block;vertical-align: middle;margin-left: 10px;transform: rotate(45deg);transform-origin: center;}
+
+
+
+
+#overlay { position: fixed; right: 0; top: 50%; background: red; cursor: pointer; writing-mode: vertical-lr; padding: 10px; border-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; color: #fff; border-top-right-radius: 0; border-bottom-right-radius: 0; transition: all 500ms; z-index: 99; }
 
   #overlay:hover{padding-right: 15px !important;}
