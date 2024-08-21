@@ -7,9 +7,9 @@ function toggleOverlay() {
     
     // Update the inner text based on the current state
     if (document.body.classList.contains('overlay')) {
-        overlayDiv.innerText = 'To Hide';
+        overlayDiv.innerText = 'Hide';
     } else {
-        overlayDiv.innerText = 'To Show';
+        overlayDiv.innerText = 'Show';
     }
 }
 
