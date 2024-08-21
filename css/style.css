@@ -245,7 +245,7 @@ main a{margin-top: 27px;}
 
 
 /* Bottom 3 */
-#bottom3
+#bottom3{background:  rgba(15, 24, 40, 0.05); }
 .btm3__container{padding-top: 68px;padding-bottom: 50px;min-height: 406px;}
 .btm3__box{display: flex;justify-content: space-between;}
 .btm3__header{}
@@ -266,9 +266,10 @@ main a{margin-top: 27px;}
 
 
 
-
-
-
+/* Bottom 4 */
+#bottom4{background:  rgba(15, 24, 40, 0.05);}
+.btm4__container{min-height: 840px;}
+.btm4_video{}
 
 
 
