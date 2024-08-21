@@ -124,7 +124,7 @@ body{
 body.overlay::before{content: '';
 background: url(/image/screenshot.png)top center no-repeat;
  position: absolute; 
- opacity: 0.7;
+ opacity: 0.8;
  pointer-events: none;
  inset: 0; 
  margin: auto;
@@ -289,8 +289,8 @@ main a{margin-top: 27px;}
 .btm5__header h2 span{font-family: var(--primary-font);color: var(--trinary-color-shade-1);font-size: 3.5rem;}
 .btm5__header p{line-height: 24px;}
 
-.btm5__list{display: flex;flex-direction: column;margin-top: 36px;row-gap: 1px;counter-reset: btm5_count;}
-.btm5__list .btm5_card{color: #fff;background: var(--primary-color-shade-3);padding-left: 104px;padding-right: 31px;padding-block: 28px;border-radius: 25px;position: relative;}
+.btm5__list{display: flex;flex-direction: column;margin-top: 36px;row-gap: 9px;counter-reset: btm5_count;}
+.btm5__list .btm5_card{color: #fff;background: var(--primary-color-shade-3);padding-left: 104px;padding-right: 31px;padding-top: 28px;border-radius: 15px;position: relative;padding-bottom: 21px;}
 .btm5__list .btm5_card::before{content: counter(btm5_count, decimal-leading-zero);counter-increment: btm5_count;font-size: 2.2rem;font-family: var(--trinary-font);position: absolute;left: 32px;color: var(--trinary-color-shade-1);top: 32px;}
 .btm5__list .btm5_card h2{color: #fff;font-size: 1.6rem;font-weight: 500;margin-bottom: 16px;}
 .btm5__list .btm5_card h2 span{}
