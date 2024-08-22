@@ -295,7 +295,9 @@ h4 small {
 }
 
 /* Header */
-
+header {
+  padding-inline: 10px;
+}
 .header__container {
 }
 .header__box {
@@ -371,6 +373,7 @@ h4 small {
 
 /* Hero Section */
 #hero {
+  padding-inline: 10px;
   background: var(--white-shade);
   position: relative;
   isolation: isolate;
@@ -445,6 +448,9 @@ h4 small {
 }
 
 /* Main */
+#main {
+  padding-inline: 10px;
+}
 #main .main__container {
   min-height: 550px;
   display: flex;
@@ -496,6 +502,7 @@ main a {
 
 /* Bottom 1 */
 #bottom1 {
+  padding-inline: 10px;
   background: var(--white-shade-300);
 }
 .btm1__container {
@@ -563,6 +570,7 @@ main a {
 
 /* Bottom 2 */
 #bottom2 {
+  padding-inline: 10px;
 }
 .btm2__container {
   min-height: 866px;
@@ -622,6 +630,7 @@ main a {
 
 /* Bottom 3 */
 #bottom3 {
+  padding-inline: 10px;
   background: rgba(15, 24, 40, 0.05);
 }
 .btm3__container {
@@ -692,6 +701,7 @@ main a {
 
 /* Bottom 4 */
 #bottom4 {
+  padding-inline: 10px;
   background: rgba(15, 24, 40, 0.05);
 }
 .btm4__container {
@@ -702,6 +712,7 @@ main a {
 
 /* Bottom 5 */
 #bottom5 {
+  padding-inline: 10px;
   background: var(--primary-color-600);
 }
 .btm5__container {
@@ -799,6 +810,7 @@ main a {
 
 /* Bottom 6 */
 #bottom6 {
+  padding-inline: 10px;
 }
 
 .btm6__container {
@@ -862,6 +874,7 @@ main a {
 
 /* Bottom 7 */
 #bottom7 {
+  padding-inline: 10px;
   background: var(--white-shade-400);
   position: relative;
   isolation: isolate;
@@ -937,6 +950,7 @@ footer {
   background: var(--secondary-color);
 }
 #footer__top {
+  padding-inline: 10px;
 }
 .ftrtop__container {
   padding-top: 95px;
@@ -1087,11 +1101,10 @@ footer {
   width: 100%;
 }
 .ftr__socialmed li a img {
-  color: red;
 }
 
 #footer__btm {
-  color: red;
+  padding-inline: 10px;
 }
 .ftrtbm__container {
   border-top: 1px solid var(--white-shade-100);
