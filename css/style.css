@@ -396,7 +396,11 @@ header {
   font-weight: 900;
   font-size: 11px;
   display: inline-block;
-  vertical-align: ami;
+  vertical-align: middle;
+  transition: all 500ms;
+}
+.navigation__menu .menu__item span:hover::before {
+  transform: rotate(180deg);
 }
 
 .menu__card:hover .sub__menu_con {

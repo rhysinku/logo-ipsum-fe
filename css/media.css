@@ -44,6 +44,15 @@
     width: 15%;
   }
 }
+@media only screen and (max-width: 1024px) {
+  .menu__card .sub__menu_con {
+    display: none;
+  }
+
+  .sub__menu_con.active {
+    display: block;
+  }
+}
 
 @media only screen and (max-width: 1000px) {
   .header__logo {
