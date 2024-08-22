@@ -398,7 +398,7 @@ header {
   vertical-align: ami;
 }
 
-.menu__item:hover + .sub__menu_con {
+.menu__card:hover .sub__menu_con {
   display: block;
 }
 
@@ -406,14 +406,20 @@ header {
 .sub__menu_con {
   position: absolute;
   width: 100%;
-  background: #fff;
+  padding-top: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  top: calc(100% + 30px);
+  top: 100%;
+  display: none;
+}
+
+.sub__container {
+  width: 100%;
+  background: #fff;
   border-radius: 10px;
   padding-block: 25px;
-  padding-inline: 20px;
-  display: none;
+  padding-inline: 25px;
+  position: relative;
 }
 
 .sub__menu {
@@ -436,7 +442,7 @@ header {
   bottom: 0;
   width: 1px;
   height: 100%;
-  left: 58%;
+  left: 56%;
   right: 50%;
 }
 
@@ -451,6 +457,10 @@ header {
 .sub__menu--list li a {
   color: var(--secondary-color-600);
   font-weight: 500;
+}
+
+.sub__menu--list li a:hover {
+  color: var(--primary-color);
 }
 
 .sub__menu_con h4 {
@@ -486,7 +496,6 @@ header {
 
 /* Properties */
 .property--menu {
-  display: block;
 }
 .property--menu .sub__menu_header {
   display: flex;
@@ -536,6 +545,10 @@ header {
 
 /* SDA */
 .sda--menu {
+}
+
+/* About Us*/
+.about--menu {
 }
 
 /* Header Info */
