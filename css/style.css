@@ -415,28 +415,92 @@ header {
   padding-inline: 20px;
   display: none;
 }
-.sub__menu_con ul {
+
+.sub__menu {
+  width: 57%;
 }
-.sub__menu_con ul li a {
+.sub__menu h4 {
+  margin-bottom: 15px;
+}
+
+.sub__menu_flex {
+  display: flex;
+
+  justify-content: space-between;
+}
+.sub__menu_flex::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.1);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  left: 58%;
+  right: 50%;
+}
+
+.sub__menu--list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.sub__menu--list li {
+  padding-block: 10px;
+}
+.sub__menu--list li a {
+  color: var(--secondary-color-600);
+  font-weight: 500;
+}
+
+.sub__menu_con h4 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.sub__menu--card {
+  max-width: 240px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-self: center;
+}
+.sub__menu--card figure {
+  max-width: 240px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.sub__menu--card figure img {
+}
+.sub__menu--content h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.sub__menu--content p {
+  font-size: 0.9rem;
 }
 
 /* Properties */
 .property--menu {
+  display: block;
 }
 .property--menu .sub__menu_header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
 }
-.property--menu .sub__menu_header h2 {
-  text-transform: uppercase;
-  font-weight: 600;
+.property--menu .sub__menu_header h4 {
 }
 .property--menu .sub__menu_header a {
 }
 .property--menu .sub__menu {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 .property--menu .sub__menu li {
   max-width: 80px;
@@ -468,6 +532,10 @@ header {
 
 .property--menu .sub__menu li:hover a span {
   color: var(--primary-color);
+}
+
+/* SDA */
+.sda--menu {
 }
 
 /* Header Info */
