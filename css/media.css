@@ -1,30 +1,38 @@
-@media only screen
-and (max-width : 1320px) {
-
+@media only screen and (max-width: 1320px) {
 }
 
+@media only screen and (max-width: 1200px) {
+  .header__logo {
+    margin-left: 5%;
+  }
 
-@media only screen
-and (max-width : 1200px) {
+  .navigation__menu {
+    gap: 1rem;
+  }
 
+  .btm7__info {
+    margin-right: 0;
+  }
+  .ftr__navigation {
+    column-gap: 1rem;
+  }
+
+  .btm6__content h2 {
+    line-height: 100%;
+  }
 }
 
-@media only screen
-and (max-width : 1090px) {
-
+@media only screen and (max-width: 1090px) {
+  .navigation__menu {
+    gap: 10px;
+  }
 }
 
-@media only screen
-and (max-width : 1024px) {
-
+@media only screen and (max-width: 1024px) {
 }
 
-@media only screen
-and (max-width : 767px ) {
-
+@media only screen and (max-width: 767px) {
 }
 
-@media only screen
-and (max-width: 480px) {
-
+@media only screen and (max-width: 480px) {
 }

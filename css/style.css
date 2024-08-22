@@ -311,6 +311,7 @@ header {
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   padding-block: 11px;
+  gap: 10px;
 }
 .header__logo {
   max-width: 147px;
@@ -323,12 +324,13 @@ header {
 
 /* Nav */
 .navigation__container {
-  grid-column: 4 / span 6;
+  grid-column: 3 / span 7;
 }
 .navigation__menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: end;
+  gap: 33px;
 }
 .navigation__menu li {
 }
@@ -430,7 +432,7 @@ header {
 
 .hero__banner {
   max-width: 604px;
-  width: 100%;
+  width: 50%;
   margin-right: 35px;
   aspect-ratio: 1/1;
 }
@@ -597,6 +599,7 @@ main a {
   font-family: var(--primary-font);
   color: var(--primary-color);
   font-size: 3.5rem;
+  font-weight: normal;
 }
 
 .btm2__box {
@@ -665,7 +668,7 @@ main a {
 
 .btm3__info {
   max-width: 760px;
-  width: 100%;
+  width: 64%;
 }
 .btm3__info p {
   line-height: 28px;
@@ -709,6 +712,9 @@ main a {
 .btm4__container {
   min-height: 815px;
   padding-block: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .btm4_video {
 }
@@ -759,6 +765,7 @@ main a {
   font-family: var(--primary-font);
   color: var(--trinary-color-800);
   font-size: 3.5rem;
+  font-weight: normal;
 }
 .btm5__header p {
   line-height: 24px;
@@ -840,6 +847,7 @@ main a {
   font-family: var(--primary-font);
   color: var(--primary-color);
   font-size: 4rem;
+  font-weight: normal;
 }
 .btm6__info a {
 }
@@ -920,6 +928,7 @@ main a {
   font-family: var(--primary-font);
   color: var(--primary-color);
   font-size: 3.5rem;
+  font-weight: 100;
 }
 .btm7__info p {
   line-height: 28px;
@@ -935,7 +944,7 @@ main a {
 
 .btm7__img {
   max-width: 604px;
-  width: 100%;
+  width: 50%;
   aspect-ratio: 1;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
@@ -972,7 +981,6 @@ footer {
   width: 100%;
 }
 .ftr__mainlogo img {
-  color: red;
 }
 
 .ftr__sponsorlogo {
@@ -981,7 +989,6 @@ footer {
   margin-right: 37px;
 }
 .ftr__sponsorlogo img {
-  color: red;
 }
 
 .ftrtop__info {
@@ -990,7 +997,7 @@ footer {
   margin-top: 35px;
 }
 .contact__info {
-  grid-column: span 2;
+  grid-column: span 3;
   margin-top: 15px;
 }
 .contact__info ul {
@@ -1024,7 +1031,7 @@ footer {
 }
 
 .ftr__navigation {
-  grid-column: 5 / 10;
+  grid-column: 5 / span 5;
   display: flex;
   justify-self: end;
   column-gap: 69px;
@@ -1073,7 +1080,7 @@ footer {
 }
 
 .ftr__contact {
-  grid-column: 10 / 13;
+  grid-column: 10 / span 3;
   max-width: 207px;
   width: 100%;
   justify-self: center;
@@ -1084,6 +1091,7 @@ footer {
   background: var(--primary-color-800);
   text-align: center;
   color: var(--secondary-color-600);
+  padding-inline: 0;
 }
 
 .ftr__socialmed {
