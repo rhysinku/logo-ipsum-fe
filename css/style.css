@@ -556,6 +556,10 @@ header {
 .resources--menu {
 }
 
+/* Media */
+.media--menu {
+}
+
 /* Header Info */
 .header__info {
   display: flex;
