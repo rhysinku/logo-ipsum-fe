@@ -85,6 +85,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 } /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -241,6 +242,7 @@ mark {
   --body-color: #383838;
   --body-color-400: rgba(56, 56, 56, 1);
   --body-color-500: rgba(28, 28, 28, 1);
+  --body-color-600: rgba(94, 94, 94, 1);
   --white-shade: #f1eae6;
   --white-shade-100: rgba(255, 255, 255, 0.2);
   --white-shade-300: rgba(255, 225, 214, 0.25);
@@ -297,6 +299,7 @@ h4 small {
 /* Header */
 header {
   padding-inline: 10px;
+  background: var(--white-shade);
 }
 .header__container {
 }
@@ -307,30 +310,59 @@ header {
   border-radius: 9999px;
   top: 24px;
   background: #fff;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
   align-items: center;
   padding-block: 11px;
-  gap: 10px;
+  padding-inline: 15px;
+  justify-content: space-between;
+  column-gap: 10px;
 }
 .header__logo {
   max-width: 147px;
   width: 100%;
-  grid-column: span 2;
-  margin-left: 32px;
 }
 .header__logo img {
 }
 
 /* Nav */
 .navigation__container {
-  grid-column: 3 / span 7;
+  width: 100%;
+  max-width: 700px;
 }
+
+.burger__header {
+  display: none;
+}
+
+.burger__open {
+  max-width: 32px;
+  width: 100%;
+  aspect-ratio: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: end;
+}
+.burger__open::before,
+.burger__open::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: var(--body-color-600);
+}
+
+.burger__open span {
+  position: relative;
+  width: 90%;
+  height: 2px;
+  background: var(--body-color-600);
+}
+
 .navigation__menu {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 33px;
+  gap: 47px;
 }
 .navigation__menu li {
 }
@@ -346,17 +378,18 @@ header {
   content: "\f078";
   font-family: var(--fontawesome);
   font-weight: 900;
+  font-size: 11px;
+  display: inline-block;
+  vertical-align: ami;
 }
 
 /* Header Info */
 .header__info {
-  grid-column: 10 / 13;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 15px;
-  justify-self: end;
-  column-gap: 30px;
+  width: 100%;
+  max-width: 219px;
 }
 .header__info section {
 }
@@ -394,7 +427,7 @@ header {
 }
 
 .hero__container {
-  min-height: 760px;
+  padding-top: 156px;
   position: relative;
   isolation: isolate;
   display: flex;
@@ -466,6 +499,7 @@ main {
   width: 100%;
   margin-top: 119px;
   margin-right: 63px;
+  margin-bottom: 40px;
 }
 main h1 {
   font-size: 3rem;
@@ -541,6 +575,7 @@ main a {
   transform: translate(-50%, -50%);
   top: 50%;
   position: relative;
+  border-radius: 10px;
 }
 
 .btm1__card {
