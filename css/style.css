@@ -225,11 +225,13 @@ mark {
   --trinary-font: "Geist Mono";
   --fontawesome: "Font Awesome 6 Free";
   --primary-color: #007173;
+  --primary-color-100: rgba(0, 148, 150, 0.1);
+  --primary-color-300: rgba(0, 191, 195, 1);
   --primary-color-400: #009496;
   --primary-color-600: rgba(9, 68, 62, 1);
   --primary-color-700: rgba(11, 57, 56, 1);
-  --primary-color-300: rgba(0, 191, 195, 1);
-  --primary-color-100: rgba(0, 148, 150, 0.1);
+  --primary-color-800: rgba(0, 191, 195, 1);
+
   --secondary-color: #0f1828;
   --secondary-color-600: rgba(15, 24, 40, 0.75);
 
@@ -240,8 +242,10 @@ mark {
   --body-color-400: rgba(56, 56, 56, 1);
   --body-color-500: rgba(28, 28, 28, 1);
   --white-shade: #f1eae6;
+  --white-shade-100: rgba(255, 255, 255, 0.2);
   --white-shade-300: rgba(255, 225, 214, 0.25);
   --white-shade-400: rgba(241, 234, 230, 1);
+  --white-shade-600: rgba(208, 208, 208, 1);
 }
 
 body {
@@ -930,14 +934,13 @@ main a {
 /* Footer */
 
 footer {
-  color: red;
+  background: var(--secondary-color);
 }
 #footer__top {
-  background: var(--secondary-color);
 }
 .ftrtop__container {
   padding-top: 95px;
-  padding-bottom: 50px;
+  padding-bottom: 60px;
 }
 .ftrtop__logo_con {
   display: flex;
@@ -967,80 +970,121 @@ footer {
 }
 .contact__info {
   grid-column: span 2;
+  margin-top: 15px;
 }
 .contact__info ul {
-  color: red;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
 }
 .contact__info ul li {
-  color: red;
+  position: relative;
+  padding-left: 34px;
 }
 .contact__info ul li::before {
-  color: red;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  max-width: 24px;
+  width: 100%;
 }
 .contact__info ul li a {
-  color: red;
+  font-size: 1rem;
+  color: #fff;
 }
-.contact__info ul li:nth-child(1) {
-  color: red;
+.contact__info ul li:nth-child(1)::before {
+  background: url(../image/tel-icon.png) center no-repeat;
+  background-size: contain;
 }
-.contact__info ul li:nth-child(2) {
-  color: red;
+.contact__info ul li:nth-child(2)::before {
+  background: url(../image/mail-icon.png) center no-repeat;
 }
 
 .ftr__navigation {
-  grid-column: 5 / span 10;
+  grid-column: 5 / 10;
+  display: flex;
+  justify-self: end;
+  column-gap: 69px;
 }
 .ftr__navigation h4 {
-  color: red;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--trinary-color-800);
+  margin-bottom: 26px;
+  letter-spacing: 3px;
 }
 
 .ftr__quicklink {
   color: red;
 }
 .ftr__quicklink h4 {
-  color: red;
 }
 .ftr__quicklink ul {
-  color: red;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
 }
 .ftr__quicklink ul li {
   color: red;
 }
 .ftr__quicklink ul li a {
-  color: red;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .ftr__tentants {
-  color: red;
 }
 .ftr__tentants h4 {
-  color: red;
 }
 .ftr__tentants ul {
-  color: red;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
 }
 .ftr__tentants ul li {
-  color: red;
 }
 .ftr__tentants ul li a {
-  color: red;
+  color: #fff;
+  font-weight: 500;
 }
 
 .ftr__contact {
-  color: red;
+  grid-column: 10 / 13;
+  max-width: 207px;
+  width: 100%;
+  justify-self: center;
 }
-.contact__btn {
-  color: red;
+.ftr__contact .contact__btn {
+  width: 100%;
+  max-width: 100%;
+  background: var(--primary-color-800);
+  text-align: center;
+  color: var(--secondary-color-600);
 }
 
 .ftr__socialmed {
-  color: red;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  column-gap: 15px;
 }
 .ftr__socialmed li {
-  color: red;
+  max-width: 48px;
+  width: 100%;
+  background: var(--primary-color-100);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
 }
 .ftr__socialmed li a {
-  color: red;
+  max-width: 26px;
+  aspect-ratio: 1/1;
+  width: 100%;
 }
 .ftr__socialmed li a img {
   color: red;
@@ -1050,32 +1094,43 @@ footer {
   color: red;
 }
 .ftrtbm__container {
-  color: red;
+  border-top: 1px solid var(--white-shade-100);
+  padding-top: 47px;
+  padding-bottom: 50px;
+  color: var(--white-shade-600);
 }
 .ftrbtm__content {
-  color: red;
+  display: flex;
+  font-size: 0.95rem;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1049px;
+  width: 100%;
+  margin-inline: auto;
 }
 .ftrbtm__content p {
-  color: red;
 }
 .ftrbtm__content_flag {
-  color: red;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .ftrbtm__content_flag li {
-  color: red;
+  max-width: 24px;
+  width: 100%;
 }
 .ftrbtm__content_flag li img {
-  color: red;
 }
 
 .ftrbtm__copyright {
-  color: red;
+  text-align: center;
+  margin-top: 10px;
 }
 .ftrbtm__copyright p {
-  color: red;
+  font-size: 0.95rem;
 }
 .ftrbtm__copyright p strong {
-  color: red;
+  font-weight: bold;
 }
 
 /* Presents */
