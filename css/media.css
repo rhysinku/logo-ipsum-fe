@@ -3,7 +3,11 @@
 
 @media only screen and (max-width: 1200px) {
   .navigation__menu {
-    gap: 35px;
+    gap: 10px;
+  }
+
+  .header__info {
+    width: 30%;
   }
 
   .btm7__info {
@@ -24,18 +28,24 @@
 }
 
 @media only screen and (max-width: 1090px) {
-  .navigation__menu {
-    gap: 20px;
+  .header__info {
+    width: 30%;
   }
 
-  .header__info {
-    width: 33%;
+  .header__logo {
+    width: 15%;
   }
 }
 
 @media only screen and (max-width: 1000px) {
   .header__logo {
     width: 19%;
+  }
+
+  .header__info {
+    width: 27%;
+    flex-direction: column;
+    row-gap: 8px;
   }
 
   .navigation__menu {
@@ -49,6 +59,10 @@
 
   .navigation__menu li span::before {
     display: block;
+  }
+
+  .navigation__menu li {
+    padding-inline: 5px;
   }
 
   .header__box {

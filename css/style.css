@@ -372,6 +372,7 @@ header {
 
 .navigation__menu li:hover {
   background: var(--trinary-color);
+  -webkit-text-stroke: 0.04rem;
 }
 
 .navigation__menu li a {
