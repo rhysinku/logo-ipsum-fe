@@ -57,11 +57,11 @@
     padding-inline: 5px;
   }
 
-  .navigation__menu li span::before {
+  .navigation__menu .menu__card .menu__item span::before {
     display: block;
   }
 
-  .navigation__menu li {
+  .navigation__menu .menu__card .menu__item {
     padding-inline: 5px;
   }
 
