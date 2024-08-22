@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const windowWidth = window.innerWidth;
   function toggleOverlay() {
     const overlayDiv = document.getElementById("overlay");
 
@@ -43,9 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateMenuHandlers() {
-    const windowWidth = window.innerWidth;
     const menuItems = document.querySelectorAll(".menu__card");
-
+    const windowWidth = window.innerWidth;
     menuItems.forEach((item) => {
       const caretButton = item.querySelector(".menu__item span");
 
@@ -82,11 +82,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  //   Swap the header button to the  after the navigation menu in mobile
+  const swapElement = () => {
+    const windowWidth = window.innerWidth;
+    const headerButton = document.querySelector(".header__button");
+    const headerSearch = document.querySelector(".header__search");
+    const headerInfo = document.querySelector(".header__info");
+    const navigationMenu = document.querySelector(".navigation__menu");
+    if (windowWidth <= 767) {
+      navigationMenu.insertAdjacentElement("afterend", headerButton);
+    } else {
+      headerInfo.insertBefore(headerButton, headerSearch.nextSibling);
+    }
+  };
+
   // Initial setup on page load
   updateMenuHandlers();
   burgerClick();
+  swapElement();
   // Update handlers on window resize
   window.addEventListener("resize", updateMenuHandlers);
+  window.addEventListener("resize", swapElement);
 
   // Add event listener for window resize
   document.getElementById("overlay").addEventListener("click", toggleOverlay);

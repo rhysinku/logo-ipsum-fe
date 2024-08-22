@@ -86,6 +86,13 @@
     padding-inline: 5px;
   }
 
+  .sub__menu_flex::before {
+    left: 43%;
+  }
+  .sub__container {
+    padding-inline: 15px;
+  }
+
   .header__box {
     display: flex;
     justify-content: space-between;
@@ -153,6 +160,7 @@
 
   .sub__container {
     background: var(--trinary-color-300);
+    padding-inline: 25px;
   }
 
   .sub__menu--card {
@@ -200,6 +208,10 @@
 
   .header__button {
     display: none;
+  }
+
+  .burger--active .header__button {
+    display: block;
   }
 
   .hero__container::before {

@@ -427,18 +427,18 @@ header {
 
 .navigation__menu .menu__card .menu__item:hover {
   background: var(--trinary-color);
-  -webkit-text-stroke: 0.04rem;
+  -webkit-text-stroke: 0.03rem;
 }
 
 .navigation__menu .menu__card .menu__item.active {
   background: var(--trinary-color);
-  -webkit-text-stroke: 0.04rem;
+  -webkit-text-stroke: 0.03rem;
 }
 
 .navigation__menu .menu__item a {
   color: var(--secondary-color);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   font-family: var(--secondary-font);
 }
 .navigation__menu .menu__item span {
@@ -501,8 +501,8 @@ header {
   bottom: 0;
   width: 1px;
   height: 100%;
-  left: 56%;
-  right: 50%;
+  left: 57%;
+  transform: translateX(-50%);
 }
 
 .sub__menu--list {
