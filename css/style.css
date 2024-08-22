@@ -854,6 +854,77 @@ main a {
   color: var(--body-color-400);
 }
 
+/* Bottom 7 */
+#bottom7 {
+  background: var(--white-shade-400);
+  position: relative;
+  isolation: isolate;
+}
+.btm7__container::before {
+  content: "";
+  background: var(--primary-color-400);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 80%;
+  z-index: -1;
+}
+.btm7__container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  min-height: 680px;
+  position: relative;
+}
+
+.btm7__info {
+  max-width: 483px;
+  width: 100%;
+  margin-top: 20%;
+  margin-right: 3rem;
+}
+.btm7__info h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+.btm7__info h2 span {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  font-size: 3.5rem;
+}
+.btm7__info p {
+  line-height: 28px;
+}
+
+.btm7__btn_con {
+  display: flex;
+  margin-top: 25px;
+  gap: 10px;
+}
+.btm7__btn_con a {
+}
+
+.btm7__img {
+  max-width: 604px;
+  width: 100%;
+  aspect-ratio: 1;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  overflow: hidden;
+  align-self: end;
+  margin-left: 10px;
+}
+.btm7__img img {
+  max-width: initial;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 47%;
+  position: relative;
+}
+
 /* Presents */
 .clearfix:after,
 .clearfix:before {
