@@ -221,19 +221,21 @@ a {
   --trinary-font: "Geist Mono";
   --fontawesome: "Font Awesome 6 Free";
   --primary-color: #007173;
-  --primary-color-shade-1: #009496;
-  --primary-color-shade-2: rgba(9, 68, 62, 1);
-  --primary-color-shade-3: rgba(11, 57, 56, 1);
+  --primary-color-400: #009496;
+  --primary-color-600: rgba(9, 68, 62, 1);
+  --primary-color-700: rgba(11, 57, 56, 1);
   --secondary-color: #0f1828;
-  --secondary-color-shade-1: rgba(15, 24, 40, 0.75);
+  --secondary-color-600: rgba(15, 24, 40, 0.75);
 
   --trinary-color: #ffe1d6;
-  --trinary-color-shade-1: rgba(250, 230, 170, 1);
+  --trinary-color-800: rgba(250, 230, 170, 1);
 
   --body-color: #383838;
+  --body-color-400: rgba(56, 56, 56, 1);
+  --body-color-500: rgba(28, 28, 28, 1);
   --white-shade: #f1eae6;
-  --white-shade-1: rgba(255, 225, 214, 0.25);
-  --white-shade-2: rgba(241, 234, 230, 1);
+  --white-shade-300: rgba(255, 225, 214, 0.25);
+  --white-shade-400: rgba(241, 234, 230, 1);
 }
 
 body {
@@ -271,7 +273,7 @@ h2 small,
 h3 small,
 h4 small {
   text-transform: uppercase;
-  color: var(--secondary-color-shade-1);
+  color: var(--secondary-color-600);
   font-family: var(--secondary-font);
 }
 
@@ -365,7 +367,7 @@ h4 small {
 }
 .hero__container::before {
   content: "";
-  background: var(--primary-color-shade-1);
+  background: var(--primary-color-400);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -457,7 +459,7 @@ main h1 small {
   font-size: 1rem;
   display: block;
   line-height: 100%;
-  color: var(--secondary-color-shade-1);
+  color: var(--secondary-color-600);
 }
 main h1 span {
   font-family: var(--primary-font);
@@ -484,7 +486,7 @@ main a {
 
 /* Bottom 1 */
 #bottom1 {
-  background: var(--white-shade-1);
+  background: var(--white-shade-300);
 }
 .btm1__container {
   min-height: 500px;
@@ -531,7 +533,7 @@ main a {
 }
 .btm1__card h2 small {
   display: block;
-  color: var(--primary-color-shade-1);
+  color: var(--primary-color-400);
   font-size: 1rem;
   font-weight: 600;
 }
@@ -567,7 +569,7 @@ main a {
 .btm2__info h2 small {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--secondary-color-shade-1);
+  color: var(--secondary-color-600);
   display: block;
   text-transform: uppercase;
 }
@@ -690,7 +692,7 @@ main a {
 
 /* Bottom 5 */
 #bottom5 {
-  background: var(--primary-color-shade-2);
+  background: var(--primary-color-600);
 }
 .btm5__container {
   min-height: 737px;
@@ -703,7 +705,7 @@ main a {
 }
 .btm5__container::before {
   content: "";
-  background: var(--trinary-color-shade-1);
+  background: var(--trinary-color-800);
   width: 113%;
   height: 100%;
   position: absolute;
@@ -727,7 +729,7 @@ main a {
 }
 .btm5__header h2 span {
   font-family: var(--primary-font);
-  color: var(--trinary-color-shade-1);
+  color: var(--trinary-color-800);
   font-size: 3.5rem;
 }
 .btm5__header p {
@@ -758,7 +760,7 @@ main a {
   font-family: var(--trinary-font);
   position: absolute;
   left: 32px;
-  color: var(--trinary-color-shade-1);
+  color: var(--trinary-color-800);
   top: 32px;
 }
 .btm5__list .btm5_card h2 {
@@ -770,7 +772,7 @@ main a {
 .btm5__list .btm5_card h2 span {
 }
 .btm5__list .btm5_card p {
-  color: var(--white-shade-2);
+  color: var(--white-shade-400);
   font-size: 1rem;
   line-height: 23px;
 }
@@ -790,26 +792,40 @@ main a {
 }
 
 .btm6__container {
-  min-height: 670px;
-  padding-top: 25px;
-  padding-block: 50px;
+  min-height: 544px;
+  padding-top: 80px;
+  padding-bottom: 50px;
 }
 .btm6__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 33px;
 }
 .btm6__info h2 {
+  font-size: 2.5rem;
+  font-family: var(--secondary-font);
+  font-weight: 600;
 }
 .btm6__info h2 span {
+  font-family: var(--primary-font);
+  color: var(--primary-color);
+  font-size: 4rem;
 }
 .btm6__info a {
 }
 
 .btm6__box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .btm6__card {
+  max-width: 426px;
+  width: 32%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 27px;
 }
 .btm6__card figure {
 }
@@ -818,10 +834,20 @@ main a {
 .btm6__content {
 }
 .btm6__content h3 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 13px;
+  text-transform: uppercase;
 }
 .btm6__content h2 {
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 10px;
+  line-height: 35px;
 }
 .btm6__content p {
+  color: var(--body-color-400);
 }
 
 /* Presents */
@@ -856,7 +882,7 @@ main a {
 }
 .secondary-btn {
   color: var(--secondary-color);
-  border: 1px solid var(--secondary-color-shade-1);
+  border: 1px solid var(--secondary-color-600);
 }
 
 .btn-txt {
