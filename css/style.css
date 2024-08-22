@@ -214,6 +214,10 @@ a {
   text-decoration: none;
   font-family: inherit;
 }
+mark {
+  background: transparent;
+  color: inherit;
+}
 
 :root {
   --primary-font: "Gotcha";
