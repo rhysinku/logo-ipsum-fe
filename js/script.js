@@ -13,34 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Make caret function
-  //   const handleCaretClick = () => {
-  //     const windowWidth = window.innerWidth;
-  //     const menuItem = document.querySelectorAll(".menu__card");
-
-  //     menuItem.forEach((item) => {
-  //       const caretButton = item.querySelector(".menu__item span");
-  //       const subMenu = item.querySelector(".sub__menu_con");
-
-  //       function handleClick(e) {
-  //         e.preventDefault();
-
-  //         document.querySelectorAll(".sub__menu_con").forEach((item) => {
-  //           if (item !== subMenu) {
-  //             item.classList.remove("active");
-  //           }
-  //         });
-
-  //         subMenu.classList.toggle("active");
-  //       }
-
-  //       caretButton.removeEventListener("click", handleClick);
-  //       if (windowWidth <= 1024) {
-  //         caretButton.addEventListener("click", handleClick);
-  //       }
-  //     });
-  //   };
-
   function handleClick(e) {
     e.preventDefault();
 
@@ -48,15 +20,26 @@ document.addEventListener("DOMContentLoaded", function () {
       .closest(".menu__card")
       .querySelector(".sub__menu_con");
 
+    const menuItem = e.target
+      .closest(".menu__card")
+      .querySelector(".menu__item");
+
     // Close all other submenus
     document.querySelectorAll(".sub__menu_con").forEach((item) => {
       if (item !== subMenu) {
         item.classList.remove("active");
       }
     });
+    // Close all other menu items
+    document.querySelectorAll(".menu__item").forEach((item) => {
+      if (item !== menuItem) {
+        item.classList.remove("active");
+      }
+    });
 
     // Toggle the active class on the clicked submenu
     subMenu.classList.toggle("active");
+    menuItem.classList.toggle("active");
   }
 
   function updateMenuHandlers() {
@@ -66,23 +49,42 @@ document.addEventListener("DOMContentLoaded", function () {
     menuItems.forEach((item) => {
       const caretButton = item.querySelector(".menu__item span");
 
-      // Remove the click event listener to prevent duplication
-
       // Add the click event listener if the window width is 1024px or less
       if (windowWidth <= 1024) {
         caretButton.addEventListener("click", handleClick);
       } else {
+        // Remove the click event listener to prevent duplication
         caretButton.removeEventListener("click", handleClick);
         document.querySelectorAll(".sub__menu_con").forEach((item) => {
+          item.classList.remove("active");
+        });
+
+        document.querySelectorAll(".menu__item").forEach((item) => {
           item.classList.remove("active");
         });
       }
     });
   }
 
+  const burgerClick = () => {
+    const burgerOpen = document.getElementById("burger__open");
+    const burgerClose = document.getElementById("burger__close");
+    const navigation = document.querySelector(".navigation__holder");
+
+    burgerOpen.addEventListener("click", () => {
+      navigation.classList.toggle("burger--active");
+      document.body.classList.toggle("overflow-hidden");
+    });
+
+    burgerClose.addEventListener("click", () => {
+      navigation.classList.toggle("burger--active");
+      document.body.classList.toggle("overflow-hidden");
+    });
+  };
+
   // Initial setup on page load
   updateMenuHandlers();
-
+  burgerClick();
   // Update handlers on window resize
   window.addEventListener("resize", updateMenuHandlers);
 
