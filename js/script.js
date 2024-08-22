@@ -82,6 +82,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  //   Reset Burger Effect when resizing
+  const resetBurgerStyle = () => {
+    const windowWidth = window.innerWidth;
+    if (windowWidth > 767) {
+      document
+        .querySelector(".navigation__holder")
+        .classList.remove("burger--active");
+      document.body.classList.remove("overflow-hidden");
+      console.log("outside of 767");
+    } else {
+      console.log("inside 767");
+    }
+  };
+
   //   Swap the header button to the  after the navigation menu in mobile
   const swapElement = () => {
     const windowWidth = window.innerWidth;
@@ -100,9 +114,11 @@ document.addEventListener("DOMContentLoaded", function () {
   updateMenuHandlers();
   burgerClick();
   swapElement();
+  resetBurgerStyle();
   // Update handlers on window resize
   window.addEventListener("resize", updateMenuHandlers);
   window.addEventListener("resize", swapElement);
+  window.addEventListener("resize", resetBurgerStyle);
 
   // Add event listener for window resize
   document.getElementById("overlay").addEventListener("click", toggleOverlay);
