@@ -228,6 +228,8 @@ mark {
   --primary-color-400: #009496;
   --primary-color-600: rgba(9, 68, 62, 1);
   --primary-color-700: rgba(11, 57, 56, 1);
+  --primary-color-300: rgba(0, 191, 195, 1);
+  --primary-color-100: rgba(0, 148, 150, 0.1);
   --secondary-color: #0f1828;
   --secondary-color-600: rgba(15, 24, 40, 0.75);
 
@@ -875,7 +877,7 @@ main a {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  min-height: 680px;
+  min-height: 676px;
   position: relative;
 }
 
@@ -923,6 +925,157 @@ main a {
   left: 50%;
   top: 47%;
   position: relative;
+}
+
+/* Footer */
+
+footer {
+  color: red;
+}
+#footer__top {
+  background: var(--secondary-color);
+}
+.ftrtop__container {
+  padding-top: 95px;
+  padding-bottom: 50px;
+}
+.ftrtop__logo_con {
+  display: flex;
+  justify-content: space-between;
+}
+.ftr__mainlogo {
+  max-width: 191px;
+  width: 100%;
+}
+.ftr__mainlogo img {
+  color: red;
+}
+
+.ftr__sponsorlogo {
+  max-width: 232px;
+  width: 100%;
+  margin-right: 37px;
+}
+.ftr__sponsorlogo img {
+  color: red;
+}
+
+.ftrtop__info {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 35px;
+}
+.contact__info {
+  grid-column: span 2;
+}
+.contact__info ul {
+  color: red;
+}
+.contact__info ul li {
+  color: red;
+}
+.contact__info ul li::before {
+  color: red;
+}
+.contact__info ul li a {
+  color: red;
+}
+.contact__info ul li:nth-child(1) {
+  color: red;
+}
+.contact__info ul li:nth-child(2) {
+  color: red;
+}
+
+.ftr__navigation {
+  grid-column: 5 / span 10;
+}
+.ftr__navigation h4 {
+  color: red;
+}
+
+.ftr__quicklink {
+  color: red;
+}
+.ftr__quicklink h4 {
+  color: red;
+}
+.ftr__quicklink ul {
+  color: red;
+}
+.ftr__quicklink ul li {
+  color: red;
+}
+.ftr__quicklink ul li a {
+  color: red;
+}
+
+.ftr__tentants {
+  color: red;
+}
+.ftr__tentants h4 {
+  color: red;
+}
+.ftr__tentants ul {
+  color: red;
+}
+.ftr__tentants ul li {
+  color: red;
+}
+.ftr__tentants ul li a {
+  color: red;
+}
+
+.ftr__contact {
+  color: red;
+}
+.contact__btn {
+  color: red;
+}
+
+.ftr__socialmed {
+  color: red;
+}
+.ftr__socialmed li {
+  color: red;
+}
+.ftr__socialmed li a {
+  color: red;
+}
+.ftr__socialmed li a img {
+  color: red;
+}
+
+#footer__btm {
+  color: red;
+}
+.ftrtbm__container {
+  color: red;
+}
+.ftrbtm__content {
+  color: red;
+}
+.ftrbtm__content p {
+  color: red;
+}
+.ftrbtm__content_flag {
+  color: red;
+}
+.ftrbtm__content_flag li {
+  color: red;
+}
+.ftrbtm__content_flag li img {
+  color: red;
+}
+
+.ftrbtm__copyright {
+  color: red;
+}
+.ftrbtm__copyright p {
+  color: red;
+}
+.ftrbtm__copyright p strong {
+  color: red;
 }
 
 /* Presents */
