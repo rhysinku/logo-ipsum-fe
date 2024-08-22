@@ -327,7 +327,7 @@ header {
 /* Nav */
 .navigation__container {
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
 }
 
 .burger__header {
@@ -362,10 +362,18 @@ header {
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 47px;
+  gap: 20px;
 }
 .navigation__menu li {
+  padding-inline: 10px;
+  padding-block: 10px;
+  border-radius: 35px;
 }
+
+.navigation__menu li:hover {
+  background: var(--trinary-color);
+}
+
 .navigation__menu li a {
   color: var(--secondary-color);
   font-size: 1rem;
