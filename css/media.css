@@ -6,6 +6,10 @@
     gap: 10px;
   }
 
+  .navigation__container {
+    margin-right: 1rem;
+  }
+
   .header__info {
     width: 30%;
   }
@@ -32,6 +36,10 @@
     width: 30%;
   }
 
+  .navigation__menu .menu__card .menu__item {
+    text-align: center;
+  }
+
   .header__logo {
     width: 15%;
   }
@@ -40,6 +48,10 @@
 @media only screen and (max-width: 1000px) {
   .header__logo {
     width: 19%;
+  }
+
+  .navigation__container {
+    margin-right: 10px;
   }
 
   .header__info {
@@ -112,6 +124,7 @@
     width: 100%;
     max-width: 40px;
     order: 3;
+    margin: unset;
   }
 
   .header__logo {
