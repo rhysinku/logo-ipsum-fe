@@ -212,6 +212,16 @@
 
   .burger--active .header__button {
     display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 25px;
+  }
+
+  .burger--active .header__button a {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
   }
 
   .hero__container::before {
