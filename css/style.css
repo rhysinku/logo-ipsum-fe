@@ -236,6 +236,7 @@ mark {
   --secondary-color: #0f1828;
   --secondary-color-600: rgba(15, 24, 40, 0.75);
   --secondary-color-400: rgba(15, 24, 40, 0.5);
+  --secondary-color-450: rgba(15, 24, 40, 0.05);
 
   --trinary-color: #ffe1d6;
   --trinary-color-800: rgba(250, 230, 170, 1);
@@ -578,6 +579,7 @@ header {
 }
 .header__button a {
   padding-block: 15px;
+  font-weight: 500;
 }
 
 /* Hero Section */
@@ -843,7 +845,7 @@ main a {
 /* Bottom 3 */
 #bottom3 {
   padding-inline: 10px;
-  background: var(--secondary-color-400);
+  background: var(--secondary-color-450);
 }
 .btm3__container {
   padding-top: 68px;
@@ -914,7 +916,7 @@ main a {
 /* Bottom 4 */
 #bottom4 {
   padding-inline: 10px;
-  background: var(--secondary-color-400);
+  background: var(--secondary-color-450);
 }
 .btm4__container {
   min-height: 815px;
