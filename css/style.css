@@ -737,6 +737,9 @@ header {
   font-size: 1.5rem;
   color: var(--body-color-600);
 }
+.header__search span:hover {
+  color: var(--primary-color);
+}
 .header__search span i {
 }
 
@@ -976,6 +979,11 @@ main a {
   justify-content: space-between;
   align-items: start;
 }
+
+.btm2__card ul li figure {
+  display: none;
+}
+
 .btm2__card h2 {
   font-weight: 600;
   font-size: 1.3rem;
@@ -1726,6 +1734,7 @@ footer {
   position: relative;
   display: block;
 }
+
 .close--btn::before {
   content: "";
   background: var(--body-color-600);
