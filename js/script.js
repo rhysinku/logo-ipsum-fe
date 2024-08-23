@@ -21,6 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return windowWidth <= 767;
   };
 
+  // Check if burger is open
+  const isBurgerOpen = () => {
+    return document.body.classList.contains("burgerIsOpen");
+  };
+
   function handleClick(e) {
     e.preventDefault();
 
@@ -80,11 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     burgerOpen.addEventListener("click", () => {
       navigation.classList.toggle("burger--active");
+      document.body.classList.add("burgerIsOpen");
       document.body.classList.add("overflow-hidden");
     });
 
     burgerClose.addEventListener("click", () => {
       navigation.classList.toggle("burger--active");
+      document.body.classList.remove("burgerIsOpen");
       document.body.classList.remove("overflow-hidden");
     });
   };
@@ -92,11 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
   //   Reset Burger Effect when resizing
   const resetBurgerStyle = () => {
     // const windowWidth = window.innerWidth;
-    if (!isMobile()) {
+    if (!isMobile() && isBurgerOpen()) {
       document
         .querySelector(".navigation__holder")
         .classList.remove("burger--active");
       document.body.classList.remove("overflow-hidden");
+      document.body.classList.remove("burgerIsOpen");
     }
   };
 
