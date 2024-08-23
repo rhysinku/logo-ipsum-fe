@@ -96,6 +96,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Click Event for the Search Button
+  const searchButtonOnClick = () => {
+    const openButton = document.querySelector("#header__search_btn");
+    const closeButton = document.querySelector("#close__search");
+    const searchBar = document.querySelector("#search__form");
+
+    openButton.addEventListener("click", () => {
+      searchBar.classList.toggle("show");
+      document.body.classList.add("overflow-hidden");
+    });
+
+    closeButton.addEventListener("click", () => {
+      searchBar.classList.toggle("show");
+      document.body.classList.remove("overflow-hidden");
+    });
+  };
+
   //   Swap the header button to the  after the navigation menu in mobile
   const swapElement = () => {
     const windowWidth = window.innerWidth;
@@ -115,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
   burgerClick();
   swapElement();
   resetBurgerStyle();
+  searchButtonOnClick();
   // Update handlers on window resize
   window.addEventListener("resize", updateMenuHandlers);
   window.addEventListener("resize", swapElement);

@@ -315,6 +315,9 @@ h4 span {
 /* Search Form */
 #search__form {
 }
+.search__form.show {
+  display: flex;
+}
 .search__form {
   position: fixed;
   background: #fff;
@@ -322,6 +325,7 @@ h4 span {
   height: 100%;
   inset: 0;
   z-index: 999;
+  display: none;
 }
 
 .search__form_container {
