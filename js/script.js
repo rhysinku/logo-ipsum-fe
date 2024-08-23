@@ -156,19 +156,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const clickedItem = e.currentTarget;
     const clickItem = clickedItem.classList[1];
 
-    console.log(`the Get Click Item : ${clickItem}`);
-
     // Add Active Class
     clickedItem.classList.add("active");
 
     // Check the name of the clicked item
     const getLocation = clickItem.replace("select--", "loc--");
 
-    console.log(`the Get Location : ${getLocation}`);
-
     const locationItem = document.querySelector(`.${getLocation}`);
-
-    console.log(`the Get Location Item : ${locationItem}`);
 
     if (locationItem) {
       locationItem.classList.add("active");
@@ -182,9 +176,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
   // Hover State in State
-  const addActiveClassOnHover = () => {
+  const addActiveClassOnHover = (e) => {
     const stateItems = document.querySelectorAll(".state__item");
-    const stateLocations = document.querySelectorAll(".svg__location");
 
     stateItems.forEach((item) => {
       item.addEventListener("mouseover", (e) => {
@@ -223,20 +216,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  const reponsiveFunction = () => {
+    const windowWidth = window.innerWidth;
+
+    const stateItems = document.querySelectorAll(".state__item");
+    stateItems.forEach((item) => {
+      item.replaceWith(item.cloneNode(true)); // This line removes all event listeners from the element
+    });
+
+    if (windowWidth <= 1024) {
+      handleStateClick();
+    } else {
+      addActiveClassOnHover();
+    }
+  };
+
   // Initial setup on page load
   updateMenuHandlers();
   burgerClick();
   swapElement();
   resetBurgerStyle();
   searchButtonOnClick();
-  addActiveClassOnHover();
-
-  handleStateClick();
+  // addActiveClassOnHover();
+  // handleStateClick();
+  reponsiveFunction();
 
   // Update handlers on window resize
   window.addEventListener("resize", updateMenuHandlers);
   window.addEventListener("resize", swapElement);
   window.addEventListener("resize", resetBurgerStyle);
+  window.addEventListener("resize", reponsiveFunction);
 
   // Add event listener for window resize
   document.getElementById("overlay").addEventListener("click", toggleOverlay);
