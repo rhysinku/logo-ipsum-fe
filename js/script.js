@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const windowWidth = window.innerWidth;
   function toggleOverlay() {
     const overlayDiv = document.getElementById("overlay");
 
@@ -13,6 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
       overlayDiv.innerText = "Show";
     }
   }
+
+  // Check is Mobile Screen
+
+  const isMobile = () => {
+    const windowWidth = window.innerWidth;
+
+    return windowWidth <= 767;
+  };
 
   function handleClick(e) {
     e.preventDefault();
@@ -73,26 +80,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     burgerOpen.addEventListener("click", () => {
       navigation.classList.toggle("burger--active");
-      document.body.classList.toggle("overflow-hidden");
+      document.body.classList.add("overflow-hidden");
     });
 
     burgerClose.addEventListener("click", () => {
       navigation.classList.toggle("burger--active");
-      document.body.classList.toggle("overflow-hidden");
+      document.body.classList.remove("overflow-hidden");
     });
   };
 
   //   Reset Burger Effect when resizing
   const resetBurgerStyle = () => {
-    const windowWidth = window.innerWidth;
-    if (windowWidth > 767) {
+    // const windowWidth = window.innerWidth;
+    if (!isMobile()) {
       document
         .querySelector(".navigation__holder")
         .classList.remove("burger--active");
       document.body.classList.remove("overflow-hidden");
-      console.log("outside of 767");
-    } else {
-      console.log("inside 767");
     }
   };
 
