@@ -439,6 +439,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .search__input_con input {
+    font-size: 1rem;
+  }
 }
 
 @media only screen and (max-width: 393px) {

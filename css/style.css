@@ -231,7 +231,8 @@ mark {
   --primary-color: rgba(0, 113, 115, 1);
   --primary-color-100: rgba(0, 148, 150, 0.1);
   --primary-color-300: rgba(0, 191, 195, 1);
-  --primary-color-400: #009496;
+  --primary-color-400: rgba(0, 148, 150, 1);
+  --primary-color-500: rgba(128, 225, 229, 1);
   --primary-color-600: rgba(9, 68, 62, 1);
   --primary-color-700: rgba(11, 57, 56, 1);
   --primary-color-800: rgba(0, 191, 195, 1);
@@ -242,8 +243,10 @@ mark {
   --secondary-color-450: rgba(15, 24, 40, 0.05);
 
   --trinary-color: rgba(255, 225, 214, 1);
-  --trinary-color-800: rgba(250, 230, 170, 1);
-  --trinary-color-300: rgba(255, 225, 214, 0.25);
+
+  --quarternary-color: rgba(250, 230, 170, 1);
+
+  --fifth-color: rgba(249, 196, 169, 1);
 
   --body-color: rgba(56, 56, 56, 1);
   --body-color-400: rgba(56, 56, 56, 1);
@@ -251,10 +254,12 @@ mark {
   --body-color-600: rgba(94, 94, 94, 1);
   --white-shade: rgba(241, 234, 230, 1);
   --white-shade-500: rgba(255, 255, 255, 1);
-  --white-shade-100: rgba(255, 255, 255, 0.2);
-  --white-shade-300: rgba(255, 225, 214, 0.25);
+
   --white-shade-400: rgba(241, 234, 230, 1);
   --white-shade-600: rgba(208, 208, 208, 1);
+
+  --gray-color-250: rgba(255, 225, 214, 0.25);
+  --gray-color-200: rgba(255, 255, 255, 0.2);
 }
 
 body {
@@ -730,6 +735,7 @@ header {
 }
 .header__search span {
   font-size: 1.5rem;
+  color: var(--body-color-600);
 }
 .header__search span i {
 }
@@ -873,7 +879,7 @@ main a {
 /* Bottom 1 */
 #bottom1 {
   padding-inline: 10px;
-  background: var(--white-shade-300);
+  background: var(--gray-color-250);
 }
 .btm1__container {
   min-height: 625px;
@@ -1098,7 +1104,7 @@ main a {
 }
 .btm5__container::before {
   content: "";
-  background: var(--trinary-color-800);
+  background: var(--quarternary-color);
   width: 113%;
   height: 100%;
   position: absolute;
@@ -1121,7 +1127,7 @@ main a {
   margin-bottom: 13px;
 }
 .btm5__header h2 span {
-  color: var(--trinary-color-800);
+  color: var(--quarternary-color);
   font-size: 3.5rem;
 }
 .btm5__header p {
@@ -1152,7 +1158,7 @@ main a {
   font-family: var(--trinary-font);
   position: absolute;
   left: 32px;
-  color: var(--trinary-color-800);
+  color: var(--quarternary-color);
   top: 32px;
 }
 .btm5__list .btm5_card h2 {
@@ -1372,6 +1378,9 @@ footer {
   font-size: 1rem;
   color: #fff;
 }
+.contact__info ul li a:hover {
+  text-decoration: underline;
+}
 .contact__info ul li:nth-child(1)::before {
   background: url(../image/tel-icon.png) center no-repeat;
   background-size: contain;
@@ -1389,28 +1398,20 @@ footer {
 .ftr__navigation h4 {
   font-size: 14px;
   font-weight: 600;
-  color: var(--trinary-color-800);
+  color: var(--quarternary-color);
   margin-bottom: 26px;
   letter-spacing: 3px;
 }
 
 .ftr__quicklink {
-  color: red;
 }
 .ftr__quicklink h4 {
 }
 .ftr__quicklink ul {
-  display: flex;
-  flex-direction: column;
-  row-gap: 25px;
 }
 .ftr__quicklink ul li {
-  color: red;
 }
 .ftr__quicklink ul li a {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
 }
 
 .ftr__tentants {
@@ -1418,15 +1419,40 @@ footer {
 .ftr__tentants h4 {
 }
 .ftr__tentants ul {
-  display: flex;
-  flex-direction: column;
-  row-gap: 25px;
 }
 .ftr__tentants ul li {
 }
 .ftr__tentants ul li a {
+}
+
+.ftr__navigation ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.ftr__navigation ul li a {
+  position: relative;
+  transition: all 500ms;
   color: #fff;
   font-weight: 500;
+}
+.ftr__navigation ul li a::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: var(--fifth-color);
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: all 500ms;
+}
+.ftr__navigation ul li a:hover {
+  -webkit-text-stroke: 1.1px;
+  color: var(--fifth-color);
+}
+.ftr__navigation ul li a:hover::before {
+  width: 100%;
 }
 
 .ftr__contact {
@@ -1442,6 +1468,11 @@ footer {
   text-align: center;
   color: var(--secondary-color-600);
   padding-inline: 0;
+}
+
+.ftr__contact .contact__btn:hover {
+  color: var(--secondary-color-600);
+  background: var(--primary-color-500);
 }
 
 .ftr__socialmed {
@@ -1472,7 +1503,7 @@ footer {
   padding-inline: 10px;
 }
 .ftrtbm__container {
-  border-top: 1px solid var(--white-shade-100);
+  border-top: 1px solid var(--gray-color-200);
   padding-top: 47px;
   padding-bottom: 50px;
   color: var(--white-shade-600);
@@ -1542,9 +1573,18 @@ footer {
   background: var(--primary-color);
   color: #fff;
 }
+
+.primary-btn:hover {
+  background: var(--primary-color-700);
+}
 .secondary-btn {
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color-600);
+}
+
+.secondary-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .btn-txt {
@@ -1555,7 +1595,20 @@ footer {
   font-weight: 600;
   font-size: 1rem;
   color: var(--primary-color);
+  position: relative;
 }
+
+.btn-txt::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  background: var(--secondary-color);
+  transition: all 500ms;
+}
+
 .btn-txt::after {
   content: "\f062";
   font-family: var(--fontawesome);
@@ -1565,6 +1618,13 @@ footer {
   margin-left: 10px;
   transform: rotate(45deg);
   transform-origin: center;
+}
+
+.btn-txt:hover {
+  color: var(--secondary-color);
+}
+.btn-txt:hover::before {
+  width: 100%;
 }
 
 .close--btn {
