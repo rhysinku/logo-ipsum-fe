@@ -579,6 +579,7 @@ header {
   font-size: 11px;
   display: inline-block;
   vertical-align: middle;
+  color: var(--secondary-color);
   transition: all 500ms;
 }
 .navigation__menu .menu__item span:hover::before {
@@ -644,10 +645,27 @@ header {
 .sub__menu--list li a {
   color: var(--secondary-color-600);
   font-weight: 500;
+  position: relative;
+  transition: all 500ms ease-in-out;
+}
+
+.sub__menu--list li a::before {
+  content: "";
+  width: 0;
+  height: 0.1rem;
+  background: var(--secondary-color);
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0%;
+  transition: all 500ms ease-in-out;
 }
 
 .sub__menu--list li a:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.sub__menu--list li a:hover::before {
+  width: 100%;
 }
 
 .sub__menu_con h4 {
@@ -727,7 +745,7 @@ header {
 }
 
 .property--menu .sub__menu li:hover a span {
-  color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* SDA */
