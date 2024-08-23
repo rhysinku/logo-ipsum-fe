@@ -1002,7 +1002,8 @@ main a {
 .btm2__card ul li a {
 }
 
-.state__item:hover {
+.state__item:hover,
+.state__item.active {
   background: var(--trinary-color);
   -webkit-text-stroke: 0.03rem;
   border-radius: 35px;
@@ -1085,6 +1086,11 @@ main a {
 #svg__map--australian {
   width: 100%;
   height: auto;
+}
+
+.svg__location.active {
+  stroke-width: 2px;
+  filter: saturate(500%);
 }
 
 /* Bottom 3 */
