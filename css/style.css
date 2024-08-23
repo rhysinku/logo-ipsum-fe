@@ -1002,6 +1002,12 @@ main a {
 .btm2__card ul li a {
 }
 
+.state__item:hover {
+  background: var(--trinary-color);
+  -webkit-text-stroke: 0.03rem;
+  border-radius: 35px;
+}
+
 .btm2__map_con {
   max-width: 896px;
   width: 100%;
@@ -1017,6 +1023,7 @@ main a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, auto);
+  pointer-events: none;
 }
 
 .map__location section {

@@ -139,12 +139,51 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
+  // Select State Handler
+  const activeState = (e) => {
+    const stateItem = document.querySelectorAll(".state__item");
+    const stateLocation = document.querySelectorAll(".svg__location");
+
+    // Reset the active class
+    stateItem.forEach((item) => {
+      item.classList.remove("active");
+    });
+    stateLocation.forEach((item) => {
+      item.classList.remove("active");
+    });
+
+    // Check the click event
+    const clickedItem = e.currentTarget;
+    const clickItem = clickedItem.classList[1];
+
+    // Add Active Class
+    clickedItem.classList.add("active");
+
+    // Check the name of the clicked item
+    const getLocation = clickItem.replace("select--", "loc--");
+
+    const locationItem = document.querySelector(`.${getLocation}`);
+    if (locationItem) {
+      locationItem.classList.add("active");
+    }
+  };
+
+  const handleStateClick = () => {
+    const buttons = document.querySelectorAll(".state__item");
+    buttons.forEach((button) => {
+      button.addEventListener("click", activeState);
+    });
+  };
+
   // Initial setup on page load
   updateMenuHandlers();
   burgerClick();
   swapElement();
   resetBurgerStyle();
   searchButtonOnClick();
+
+  handleStateClick();
+
   // Update handlers on window resize
   window.addEventListener("resize", updateMenuHandlers);
   window.addEventListener("resize", swapElement);
