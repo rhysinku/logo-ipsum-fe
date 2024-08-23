@@ -322,6 +322,7 @@ h4 span {
 .search__form.show {
   transform: scale(1);
   opacity: 1;
+  z-index: 999;
 }
 .search__form {
   position: fixed;
@@ -329,10 +330,10 @@ h4 span {
   width: 100%;
   height: 100%;
   inset: 0;
-  z-index: 999;
+  z-index: -999;
   opacity: 0;
   transform: scale(0);
-  border-radius: 99999999px;
+
   transition-property: opacity, transform;
   transition-duration: 500ms, 1000ms, 2000ms;
   transform-origin: center;
