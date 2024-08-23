@@ -156,13 +156,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const clickedItem = e.currentTarget;
     const clickItem = clickedItem.classList[1];
 
+    console.log(`the Get Click Item : ${clickItem}`);
+
     // Add Active Class
     clickedItem.classList.add("active");
 
     // Check the name of the clicked item
     const getLocation = clickItem.replace("select--", "loc--");
 
+    console.log(`the Get Location : ${getLocation}`);
+
     const locationItem = document.querySelector(`.${getLocation}`);
+
+    console.log(`the Get Location Item : ${locationItem}`);
+
     if (locationItem) {
       locationItem.classList.add("active");
     }
@@ -174,6 +181,47 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener("click", activeState);
     });
   };
+  // Hover State in State
+  const addActiveClassOnHover = () => {
+    const stateItems = document.querySelectorAll(".state__item");
+    const stateLocations = document.querySelectorAll(".svg__location");
+
+    stateItems.forEach((item) => {
+      item.addEventListener("mouseover", (e) => {
+        const hoveredItem = e.currentTarget;
+        const hoveredClass = hoveredItem.classList[1]; // Assumes the second class is used for identification
+
+        // Add 'active' class to the hovered item
+        hoveredItem.classList.add("active");
+
+        // Derive the corresponding location class from the hovered item's class
+        const locationClass = hoveredClass.replace("select--", "loc--");
+
+        // Select the corresponding location element and add 'active' class
+        const locationItem = document.querySelector(`.${locationClass}`);
+        if (locationItem) {
+          locationItem.classList.add("active");
+        }
+      });
+
+      item.addEventListener("mouseout", (e) => {
+        const hoveredItem = e.currentTarget;
+        const hoveredClass = hoveredItem.classList[1]; // Assumes the second class is used for identification
+
+        // Remove 'active' class from the hovered item
+        hoveredItem.classList.remove("active");
+
+        // Derive the corresponding location class from the hovered item's class
+        const locationClass = hoveredClass.replace("select--", "loc--");
+
+        // Select the corresponding location element and remove 'active' class
+        const locationItem = document.querySelector(`.${locationClass}`);
+        if (locationItem) {
+          locationItem.classList.remove("active");
+        }
+      });
+    });
+  };
 
   // Initial setup on page load
   updateMenuHandlers();
@@ -181,6 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
   swapElement();
   resetBurgerStyle();
   searchButtonOnClick();
+  addActiveClassOnHover();
 
   handleStateClick();
 
