@@ -266,7 +266,7 @@ body.overlay::before {
   content: "";
   background: url(../image/screenshot.png) top center no-repeat;
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.7;
   pointer-events: none;
   inset: 0;
   margin: auto;
@@ -279,7 +279,7 @@ h3,
 h4 {
   font-family: var(--secondary-font);
   color: var(--secondary-color);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 100%;
 }
 
@@ -290,6 +290,15 @@ h4 small {
   text-transform: uppercase;
   color: var(--secondary-color-600);
   font-family: var(--secondary-font);
+}
+
+h1 span,
+h2 span,
+h3 span,
+h4 span {
+  font-weight: normal;
+  font-family: var(--primary-font);
+  color: var(--primary-color);
 }
 
 .wrapper {
@@ -358,7 +367,26 @@ header {
   max-width: 24px;
   width: 100%;
   aspect-ratio: 1;
-  background: red;
+  position: relative;
+}
+
+.burger__close::before {
+  content: "";
+  background: var(--body-color-600);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  transform-origin: center;
+  transform: rotate(50deg);
+}
+.burger__close::after {
+  content: "";
+  background: var(--body-color-600);
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  transform-origin: center;
+  transform: rotate(-50deg);
 }
 
 .burger--active .navigation__menu {
@@ -642,6 +670,7 @@ header {
 .header__button a {
   padding-block: 15px;
   font-weight: 500;
+  padding-inline: 26px;
 }
 
 /* Hero Section */
@@ -678,13 +707,10 @@ header {
 .hero__title h2 {
   font-size: 3rem;
   color: var(--secondary-color);
-  font-weight: 400;
   margin-bottom: 1rem;
 }
 .hero__title h2 span {
-  font-family: var(--primary-font);
   line-height: 100%;
-  color: var(--primary-color);
   font-size: 4rem;
 }
 .hero__title p {
@@ -738,11 +764,12 @@ main {
   margin-bottom: 40px;
 }
 main h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   line-height: 100%;
   color: var(--secondary-color);
   font-weight: normal;
   margin-bottom: 14px;
+  font-weight: 600;
 }
 main h1 small {
   text-transform: uppercase;
@@ -780,7 +807,7 @@ main a {
   background: var(--white-shade-300);
 }
 .btm1__container {
-  min-height: 500px;
+  min-height: 625px;
   padding-top: 78px;
   padding-bottom: 48px;
 }
@@ -848,7 +875,7 @@ main a {
   padding-inline: 10px;
 }
 .btm2__container {
-  min-height: 866px;
+  min-height: 983px;
   padding-top: 67px;
   padding-bottom: 50px;
 }
@@ -862,15 +889,10 @@ main a {
 .btm2__info h2 small {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--secondary-color-600);
   display: block;
-  text-transform: uppercase;
 }
 .btm2__info h2 span {
-  font-family: var(--primary-font);
-  color: var(--primary-color);
   font-size: 3.5rem;
-  font-weight: normal;
 }
 
 .btm2__box {
@@ -910,7 +932,7 @@ main a {
   background: var(--secondary-color-450);
 }
 .btm3__container {
-  padding-top: 68px;
+  padding-top: 70px;
   padding-bottom: 50px;
   min-height: 406px;
 }
@@ -927,13 +949,9 @@ main a {
 .btm3__header h2 small {
   display: block;
   font-size: 1rem;
-  text-transform: uppercase;
 }
 .btm3__header h2 span {
-  font-family: var(--primary-font);
-  color: var(--primary-color);
   display: block;
-  font-weight: normal;
   font-size: 4rem;
 }
 
@@ -971,6 +989,7 @@ main a {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-top: 52px;
 }
 .btm3__btn_con a {
 }
@@ -981,7 +1000,7 @@ main a {
   background: var(--secondary-color-450);
 }
 .btm4__container {
-  min-height: 815px;
+  min-height: 845px;
   padding-block: 12px;
   display: flex;
   justify-content: center;
@@ -1000,7 +1019,7 @@ main a {
   background: var(--primary-color-600);
 }
 .btm5__container {
-  min-height: 737px;
+  min-height: 879px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -1033,10 +1052,8 @@ main a {
   margin-bottom: 13px;
 }
 .btm5__header h2 span {
-  font-family: var(--primary-font);
   color: var(--trinary-color-800);
   font-size: 3.5rem;
-  font-weight: normal;
 }
 .btm5__header p {
   line-height: 24px;
@@ -1099,7 +1116,7 @@ main a {
 }
 
 .btm6__container {
-  min-height: 544px;
+  min-height: 670px;
   padding-top: 80px;
   padding-bottom: 50px;
 }
@@ -1111,14 +1128,9 @@ main a {
 }
 .btm6__info h2 {
   font-size: 2.5rem;
-  font-family: var(--secondary-font);
-  font-weight: 600;
 }
 .btm6__info h2 span {
-  font-family: var(--primary-font);
-  color: var(--primary-color);
   font-size: 4rem;
-  font-weight: normal;
 }
 .btm6__info a {
 }
@@ -1180,15 +1192,16 @@ main a {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
-  min-height: 676px;
+  min-height: 681px;
   position: relative;
 }
 
 .btm7__info {
-  max-width: 483px;
+  max-width: 486px;
   width: 100%;
   margin-top: 20%;
   margin-right: 3rem;
+  padding-bottom: 50px;
 }
 .btm7__info h2 {
   font-size: 2.6rem;
@@ -1196,10 +1209,7 @@ main a {
   margin-bottom: 15px;
 }
 .btm7__info h2 span {
-  font-family: var(--primary-font);
-  color: var(--primary-color);
   font-size: 3.5rem;
-  font-weight: 100;
 }
 .btm7__info p {
   line-height: 28px;
@@ -1351,7 +1361,7 @@ footer {
 }
 
 .ftr__contact {
-  grid-column: 10 / span 3;
+  grid-column: 10 / span 5;
   max-width: 207px;
   width: 100%;
   justify-self: center;
@@ -1454,6 +1464,7 @@ footer {
   border-radius: 35px;
   padding-inline: 17px;
   padding-block: 20px;
+  font-size: 1rem;
 }
 .btn:hover {
 }
