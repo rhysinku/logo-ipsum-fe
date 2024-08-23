@@ -971,6 +971,10 @@ main a {
 }
 
 .btm2__box {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: start;
 }
 .btm2__card h2 {
   font-weight: 600;
@@ -998,7 +1002,30 @@ main a {
 .btm2__card ul li a {
 }
 
+.btm2__map_con {
+  max-width: 896px;
+  width: 100%;
+  position: relative;
+  top: -103px;
+  padding-right: 70px;
+}
+
+.map__location {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, auto);
+}
+
 .btm2__map {
+  width: 100%;
+}
+
+#svg__map--australian {
+  width: 100%;
+  height: auto;
 }
 
 /* Bottom 3 */
