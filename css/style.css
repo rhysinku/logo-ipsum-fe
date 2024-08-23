@@ -482,6 +482,7 @@ header {
   justify-content: space-between;
   padding-block: 25px;
   padding-inline: 25px;
+  border-radius: 35px;
 }
 
 .burger--active .sub__menu_con {
@@ -1563,6 +1564,7 @@ footer {
   color: #fff;
   font-weight: 500;
   font-size: 1rem;
+  display: block;
 }
 .ftr__navigation ul li a::before {
   content: "";
@@ -1635,20 +1637,22 @@ footer {
   color: var(--white-shade-600);
 }
 .ftrbtm__content {
-  display: flex;
-  font-size: 0.95rem;
-  justify-content: space-between;
-  gap: 10px;
-  max-width: 1049px;
+  max-width: 1095px;
   width: 100%;
   margin-inline: auto;
+  text-align: center;
 }
 .ftrbtm__content p {
+  display: inline;
+  vertical-align: middle;
+  font-size: 1rem;
 }
 .ftrbtm__content_flag {
-  display: flex;
+  display: inline-flex;
+  vertical-align: middle;
   align-items: center;
   gap: 6px;
+  margin-right: 10px;
 }
 .ftrbtm__content_flag li {
   max-width: 24px;

@@ -2,7 +2,6 @@
   .btm2__map_con {
     top: 0;
   }
-
 }
 
 @media only screen and (max-width: 1200px) {
@@ -47,6 +46,14 @@
   .header__logo {
     width: 15%;
   }
+
+  .ftr__navigation {
+    grid-column: 4 / span 6;
+  }
+
+  .ftr__contact {
+    padding-inline: 1rem;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .menu__card .sub__menu_con {
@@ -88,6 +95,7 @@
 
   .navigation__menu .menu__item {
     padding-inline: 5px;
+    border-radius: 25px;
   }
 
   .sub__menu_flex::before {
@@ -128,6 +136,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .contact__info ul li {
+    padding-left: 25px;
+  }
+
+  .ftrtop__info {
+    gap: 1rem;
+  }
+  .ftr__contact {
+    width: 100%;
   }
 }
 
@@ -476,6 +495,11 @@
     flex-direction: column;
     text-align: center;
     align-items: center;
+    display: flex;
+    gap: 10px;
+  }
+  .ftrbtm__content_flag {
+    margin-inline: auto;
   }
 
   .ftr__navigation {
@@ -483,6 +507,7 @@
     text-align: center;
     row-gap: 50px;
     margin-block: 25px;
+    margin-inline: auto;
   }
 
   .ftr__socialmed {
