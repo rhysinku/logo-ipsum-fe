@@ -308,6 +308,28 @@ h4 span {
   position: relative;
 }
 
+/* Search Form */
+#search__form {
+}
+.search__form {
+}
+
+.search__form_container {
+}
+.search__form_container form {
+}
+.search__form_container form h2 {
+}
+
+.search__input_con {
+}
+.search__input_con input {
+}
+.search__input_icon {
+}
+.search__input_icon i {
+}
+
 /* Header */
 header {
   padding-inline: 10px;
