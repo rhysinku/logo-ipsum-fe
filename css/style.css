@@ -579,7 +579,7 @@ header {
   font-size: 11px;
   display: inline-block;
   vertical-align: middle;
-  color: var(--secondary-color);
+  color: var(--secondary-color-400);
   transition: all 500ms;
 }
 .navigation__menu .menu__item span:hover::before {
@@ -1652,6 +1652,10 @@ footer {
   width: 100%;
 }
 .ftr__socialmed li a img {
+}
+
+.ftr__socialmed li:hover {
+  background: var(--primary-color);
 }
 
 #footer__btm {
