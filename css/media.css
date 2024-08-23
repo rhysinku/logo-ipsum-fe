@@ -159,6 +159,8 @@
     margin: unset;
   }
 
+  
+
   .sub__menu_con {
     display: none;
     margin: auto;
@@ -292,9 +294,11 @@
 
   main {
     min-height: unset;
-    margin: 0;
+    margin-inline: auto;
     max-width: 100%;
     width: 100%;
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   main h1 span {
@@ -535,4 +539,13 @@
 }
 
 @media only screen and (max-width: 393px) {
+  .btn {
+    padding-inline: 0.6rem;
+  }
+  .sub__container {
+    padding-inline: 0.7rem;
+  }
+  .navigation__holder.burger--active {
+    padding-inline: 0.7rem;
+  }
 }

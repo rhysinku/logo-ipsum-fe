@@ -332,8 +332,9 @@ h4 span {
   z-index: 999;
   opacity: 0;
   transform: scale(0);
+  border-radius: 99999999px;
   transition-property: opacity, transform;
-  transition-duration: 1000ms, 1500ms;
+  transition-duration: 500ms, 1000ms, 2000ms;
   transform-origin: center;
 }
 
@@ -660,7 +661,9 @@ header {
   color: var(--secondary-color-600);
   font-weight: 500;
   position: relative;
+  display: inline-block;
   transition: all 500ms ease-in-out;
+  font-size: 1rem;
 }
 
 .sub__menu--list li a::before {
