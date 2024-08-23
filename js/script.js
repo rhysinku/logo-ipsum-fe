@@ -182,12 +182,11 @@ document.addEventListener("DOMContentLoaded", function () {
     stateItems.forEach((item) => {
       item.addEventListener("mouseover", (e) => {
         const hoveredItem = e.currentTarget;
-        const hoveredClass = hoveredItem.classList[1]; // Assumes the second class is used for identification
+        const hoveredClass = hoveredItem.classList[1];
 
         // Add 'active' class to the hovered item
         hoveredItem.classList.add("active");
 
-        // Derive the corresponding location class from the hovered item's class
         const locationClass = hoveredClass.replace("select--", "loc--");
 
         // Select the corresponding location element and add 'active' class
@@ -199,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       item.addEventListener("mouseout", (e) => {
         const hoveredItem = e.currentTarget;
-        const hoveredClass = hoveredItem.classList[1]; // Assumes the second class is used for identification
+        const hoveredClass = hoveredItem.classList[1];
 
         // Remove 'active' class from the hovered item
         hoveredItem.classList.remove("active");
@@ -216,12 +215,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
+  // Reposnive Functions to 1024 bellow
   const reponsiveFunction = () => {
     const windowWidth = window.innerWidth;
 
     const stateItems = document.querySelectorAll(".state__item");
     stateItems.forEach((item) => {
-      item.replaceWith(item.cloneNode(true)); // This line removes all event listeners from the element
+      item.replaceWith(item.cloneNode(true));
     });
 
     if (windowWidth <= 1024) {
@@ -230,6 +230,55 @@ document.addEventListener("DOMContentLoaded", function () {
       addActiveClassOnHover();
     }
   };
+
+  function animateCounterInt(element, start, end, duration) {
+    const range = end - start;
+    let startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const current = Math.floor(progress * range + start);
+      element.textContent = current.toLocaleString();
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  }
+
+  const countersInt = document.querySelectorAll(".counter");
+
+  function handleIntersection(entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        countersInt.forEach((counter) => {
+          const endValue = parseInt(counter.textContent.replace(/,/g, ""), 10);
+          animateCounterInt(counter, 0, endValue, 2000);
+        });
+        observer.disconnect();
+      }
+    });
+  }
+
+  // Set up Intersection Observer
+  const observerOptions = {
+    root: null, // viewport as the root
+    threshold: 0.1, // Trigger the element is in view
+  };
+
+  const observer = new IntersectionObserver(
+    handleIntersection,
+    observerOptions
+  );
+
+  const target = document.querySelector("#bottom3");
+  if (target) {
+    observer.observe(target);
+  }
+
+  // Number Counter
 
   // Initial setup on page load
   updateMenuHandlers();

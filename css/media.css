@@ -2,6 +2,7 @@
   .btm2__map_con {
     top: 0;
   }
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -161,8 +162,12 @@
     align-items: center;
   }
 
+  .property--menu .sub__menu li {
+    max-width: 185px;
+  }
+
   .sub__container {
-    background: var(--trinary-color-300);
+    background: var(--trinary-color-250);
     padding-inline: 25px;
   }
 
@@ -491,6 +496,10 @@
   }
   .btm2__card ul li {
     max-width: 171px;
+  }
+
+  .property--menu .sub__menu li {
+    max-width: 80px;
   }
 }
 

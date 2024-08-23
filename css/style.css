@@ -243,7 +243,7 @@ mark {
   --secondary-color-450: rgba(15, 24, 40, 0.05);
 
   --trinary-color: rgba(255, 225, 214, 1);
-
+  --trinary-color-250: rgba(255, 225, 214, 0.25);
   --quarternary-color: rgba(250, 230, 170, 1);
 
   --fifth-color: rgba(249, 196, 169, 1);
@@ -258,7 +258,6 @@ mark {
   --white-shade-400: rgba(241, 234, 230, 1);
   --white-shade-600: rgba(208, 208, 208, 1);
 
-  --gray-color-250: rgba(255, 225, 214, 0.25);
   --gray-color-200: rgba(255, 255, 255, 0.2);
 }
 
@@ -435,6 +434,11 @@ header {
   margin-right: 5rem;
   position: relative;
 }
+
+.navigation__holder {
+  transition: all 500s ease-in-out;
+}
+
 /* Burger Active */
 .burger__header {
   display: none;
@@ -499,19 +503,40 @@ header {
   justify-content: space-around;
   align-items: end;
 }
+
+.burger__open::before,
+.burger__open::after,
+.burger__open span {
+  height: 2px;
+  background: var(--body-color-600);
+  transition: all 500ms ease-in-out;
+}
+
 .burger__open::before,
 .burger__open::after {
   content: "";
   width: 100%;
-  height: 2px;
-  background: var(--body-color-600);
 }
 
 .burger__open span {
   position: relative;
-  width: 90%;
-  height: 2px;
+  width: 77%;
   background: var(--body-color-600);
+}
+
+.burger__open:hover::before {
+  width: 77%;
+  transition-duration: 0.35s;
+}
+
+.burger__open:hover::after {
+  width: 77%;
+  transition-duration: 0.35s;
+}
+
+.burger__open:hover span {
+  width: 100%;
+  transition-duration: 0.35s;
 }
 
 .navigation__menu {
@@ -882,7 +907,7 @@ main a {
 /* Bottom 1 */
 #bottom1 {
   padding-inline: 10px;
-  background: var(--gray-color-250);
+  background: var(--trinary-color-250);
 }
 .btm1__container {
   min-height: 625px;
@@ -953,9 +978,8 @@ main a {
   padding-inline: 10px;
 }
 .btm2__container {
-  min-height: 983px;
   padding-top: 67px;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 .btm2__info {
   margin-bottom: 72px;
@@ -1148,7 +1172,7 @@ main a {
   padding: 10px;
   background: #fff;
   border-radius: 10px;
-  min-height: 120px;
+  padding-block: 20px;
 }
 .btm3__status__card h2 {
   font-size: 2rem;
@@ -1158,6 +1182,7 @@ main a {
 }
 .btm3__status__card h3 {
   font-size: 1.5rem;
+  font-weight: 500;
 }
 
 .btm3__btn_con {
@@ -1482,11 +1507,11 @@ footer {
   text-decoration: underline;
 }
 .contact__info ul li:nth-child(1)::before {
-  background: url(../image/tel-icon.png) center no-repeat;
+  background: url(../image/icons/tel-icon.png) center no-repeat;
   background-size: contain;
 }
 .contact__info ul li:nth-child(2)::before {
-  background: url(../image/mail-icon.png) center no-repeat;
+  background: url(../image/icons/mail-icon.png) center no-repeat;
 }
 
 .ftr__navigation {
@@ -1494,6 +1519,7 @@ footer {
   display: flex;
   justify-self: end;
   column-gap: 69px;
+  margin-left: auto;
 }
 .ftr__navigation h4 {
   font-size: 14px;
@@ -1536,6 +1562,7 @@ footer {
   transition: all 500ms;
   color: #fff;
   font-weight: 500;
+  font-size: 1rem;
 }
 .ftr__navigation ul li a::before {
   content: "";
@@ -1556,10 +1583,9 @@ footer {
 }
 
 .ftr__contact {
-  grid-column: 10 / span 5;
-  max-width: 207px;
-  width: 100%;
-  justify-self: center;
+  grid-column: 10 / span 3;
+  padding-left: 4rem;
+  padding-right: 2rem;
 }
 .ftr__contact .contact__btn {
   width: 100%;
@@ -1733,19 +1759,11 @@ footer {
   aspect-ratio: 1;
   position: relative;
   display: block;
+  cursor: pointer;
+  --rotateDeg: 50deg;
 }
 
-.close--btn::before {
-  content: "";
-  background: var(--body-color-600);
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  transform-origin: center;
-  transform: rotate(50deg);
-  inset: 0;
-  margin: auto;
-}
+.close--btn::before,
 .close--btn::after {
   content: "";
   background: var(--body-color-600);
@@ -1753,9 +1771,20 @@ footer {
   height: 2px;
   position: absolute;
   transform-origin: center;
-  transform: rotate(-50deg);
   inset: 0;
   margin: auto;
+  transition: all 500ms ease;
+}
+
+.close--btn::before {
+  transform: rotate(var(--rotateDeg, 50deg));
+}
+.close--btn::after {
+  transform: rotate(calc(-1 * var(--rotateDeg, -50deg)));
+}
+
+.close--btn:hover {
+  --rotateDeg: 40deg;
 }
 
 #overlay {
