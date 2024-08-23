@@ -56,13 +56,6 @@
   }
 }
 @media only screen and (max-width: 1024px) {
-  .menu__card .sub__menu_con {
-    display: none;
-  }
-
-  .sub__menu_con.active {
-    display: block;
-  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -166,6 +159,16 @@
     margin: unset;
   }
 
+  .sub__menu_con {
+    display: none;
+    margin: auto;
+  }
+
+  .menu__card:hover,
+  .sub__menu_con.active {
+    display: block;
+  }
+
   .header__logo {
     width: 100%;
   }
@@ -209,15 +212,16 @@
   }
 
   .navigation__holder {
-    display: none;
+    position: fixed;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 500ms ease-in-out, opacity 1ms ease-in-out;
   }
   .burger__open {
     display: flex;
   }
   /* Burger Active */
   .navigation__holder.burger--active {
-    position: fixed;
-    display: block;
     width: 100%;
     height: 100%;
     background: #fff;
@@ -228,6 +232,8 @@
     padding-inline: 25px;
     padding-block: 25px;
     overflow-y: auto;
+    transform: translateX(0);
+    opacity: 1;
   }
   .burger--active .burger__header {
     display: flex;

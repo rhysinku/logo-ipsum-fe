@@ -320,19 +320,25 @@ h4 span {
 #search__form {
 }
 .search__form.show {
-  display: flex;
+  transform: scale(1);
+  opacity: 1;
 }
 .search__form {
   position: fixed;
-  background: #fff;
+  display: flex;
   width: 100%;
   height: 100%;
   inset: 0;
   z-index: 999;
-  display: none;
+  opacity: 0;
+  transform: scale(0);
+  transition-property: opacity, transform;
+  transition-duration: 1000ms, 1500ms;
+  transform-origin: center;
 }
 
 .search__form_container {
+  background: #fff;
   padding: 1.5rem;
   width: 100%;
   height: 100%;
@@ -391,6 +397,7 @@ span.close__search {
   font-weight: 300;
   font-family: var(--quarternary-font);
   color: #888888;
+  caret-color: var(--primary-color);
 }
 .search__input_icon {
   color: var(--body-color-600);
@@ -436,7 +443,6 @@ header {
 }
 
 .navigation__holder {
-  transition: all 500s ease-in-out;
 }
 
 /* Burger Active */
@@ -586,19 +592,18 @@ header {
   transform: rotate(180deg);
 }
 
-.menu__card:hover .sub__menu_con {
-  display: block;
-}
-
 /* Sub Header */
 .sub__menu_con {
   position: absolute;
   width: 100%;
   padding-top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: -50%;
+  margin-left: 50%;
   top: 100%;
-  display: none;
+  transform: scale(0);
+  transition: all 500ms;
+  opacity: 0;
+  transform-origin: top left;
 }
 
 .sub__container {
@@ -608,6 +613,15 @@ header {
   padding-block: 25px;
   padding-inline: 25px;
   position: relative;
+}
+
+.menu__card:hover .sub__menu_con,
+.sub__menu_con.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.menu__card:hover .sub__container {
 }
 
 .sub__menu {
