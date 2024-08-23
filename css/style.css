@@ -1591,7 +1591,7 @@ footer {
   color: #fff;
   font-weight: 500;
   font-size: 1rem;
-  display: block;
+  display: inline-block;
 }
 .ftr__navigation ul li a::before {
   content: "";
