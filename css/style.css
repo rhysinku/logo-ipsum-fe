@@ -734,18 +734,27 @@ header {
   justify-content: center;
   align-items: center;
 }
-.property--menu .sub__menu li a figure img {
+.property--menu .sub__menu li a figure svg {
   width: 73%;
   aspect-ratio: 1/1;
 }
+
+.property--menu .sub__menu li a figure svg path {
+  fill: var(--secondary-color-400);
+}
+
 .property--menu .sub__menu li a span {
   font-size: 1rem;
-  color: var(--secondary-color-600);
+  color: var(--secondary-color-400);
   font-weight: 600;
 }
 
 .property--menu .sub__menu li:hover a span {
   color: var(--secondary-color);
+}
+
+.property--menu .sub__menu li:hover figure svg path {
+  fill: var(--secondary-color);
 }
 
 /* SDA */
