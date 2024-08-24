@@ -403,6 +403,12 @@ span.close__search {
 }
 .search__input_icon {
   color: var(--body-color-600);
+  background: transparent;
+  border: none;
+  transition: all 500ms;
+}
+.search__input_icon:hover {
+  color: var(--primary-color);
 }
 .search__input_icon i {
 }
@@ -807,6 +813,7 @@ header {
 .header__search span {
   font-size: 1.5rem;
   color: var(--body-color-600);
+  transition: all 500ms;
 }
 .header__search span:hover {
   color: var(--primary-color);
@@ -1663,6 +1670,7 @@ footer {
   align-items: center;
   justify-content: center;
   aspect-ratio: 1/1;
+  transition: all 500ms;
 }
 .ftr__socialmed li a {
   max-width: 26px;
@@ -1744,6 +1752,7 @@ footer {
   padding-inline: 17px;
   padding-block: 20px;
   font-size: 1rem;
+  transition: all 500ms;
 }
 .btn:hover {
 }
